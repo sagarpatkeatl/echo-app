@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: echo
+  name: echo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: echo
+  template:
+    metadata:
+      labels:
+        run: echo
+    spec:
+      containers:
+      - image: sagarpatkeatl/echo
+        name: echo
+        ports:
+        - containerPort: 3000
